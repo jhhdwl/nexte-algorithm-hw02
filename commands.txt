@@ -1,0 +1,35 @@
+git clone 你的仓库地址
+cd nexte-algorithm-hw02
+git config user.name "你的名字"
+git config user.email "github 邮箱"
+mkdir src
+mkdir tests
+nano .gitignore
+nano CMakeLists.txt
+git add README.md .gitignore CMakeLists.txt
+git commit -m "Initialize C++ project, add cmake and gitignore"
+git switch -c feature/algorithms
+nano src/streak.cpp
+git add src/streak.cpp
+git commit -m "Implement problem 1: longest streak"
+nano src/unique_ids.cpp
+git add src/unique_ids.cpp
+git commit -m "Implement problem 2: unique ids sort and deduplicate"
+nano src/range_sum.cpp
+git add src/range_sum.cpp
+git commit -m "Implement problem 3: prefix sum range query"
+cmake -S . -B build
+cmake --build build
+./build/streak
+./build/unique_ids
+./build/range_sum
+nano tests/streak_sample.in
+nano tests/streak_sample.out
+git add tests/
+git commit -m "Add sample test cases for three problems"
+git switch main
+git merge feature/algorithms
+git push -u origin main
+git log --oneline --graph --all
+nano README.md
+关闭虚拟机命令没了，找ai借了
